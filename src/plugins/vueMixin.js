@@ -1,6 +1,7 @@
 // import jsonFile from '/opt/files/estonia-for-ukraine.json'
 import store from '@/store/store.js'
 import axios from './axios.js'
+import json from '../../estonia-for-ukraine.json'
 
 export default {
   data () {
@@ -23,8 +24,7 @@ export default {
       window.open(link)
     },
     async axiosTest () {
-      let response = await axios.getList()
-      store.dispatch('setCommonData', response.data)
+      store.dispatch('setCommonData', json)
     },
     async axiosAuthCode () {
       const authCode = await this.$gAuth.getAuthCode();
